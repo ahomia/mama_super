@@ -20,6 +20,6 @@ public class ShopHelper extends HelperBase {
 
     public int howManyStickerPresent(WebElement element) {
         return howManyElementPresents(element,
-                By.xpath("//div[contains(@class,'sticker')]"));
+                By.xpath(".//div[contains(@class,'sticker')]"));
     }
 }

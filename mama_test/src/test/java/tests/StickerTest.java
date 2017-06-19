@@ -24,7 +24,7 @@ public class StickerTest extends TestBase {
         List<WebElement> productList = app.shop().productList();
         int productSize = productList.size();
         for (int i = 0; i < productSize; i++) {
-            Assert.assertEquals(1,app.shop().howManyStickerPresent(productList.get(i)));
+            Assert.assertEquals("In current objects there is wrong count of stickers"+i,1,app.shop().howManyStickerPresent(productList.get(i)));
             //System.out.println(app.shop().areStickerPresent(productList.get(i)));
         }
 
