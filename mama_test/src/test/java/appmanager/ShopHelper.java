@@ -18,8 +18,8 @@ public class ShopHelper extends HelperBase {
         return listOfElements(By.xpath("//li[@class='product column shadow hover-light']"));
     }
 
-    public boolean areStickerPresent(WebElement element) {
-        return areElementPresents(element,
+    public int howManyStickerPresent(WebElement element) {
+        return howManyElementPresents(element,
                 By.xpath("//div[contains(@class,'sticker')]"));
     }
 }

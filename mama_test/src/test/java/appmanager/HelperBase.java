@@ -59,4 +59,7 @@ public class HelperBase {
     protected boolean areElementPresents(WebElement element, By locator) {
         return element.findElements(locator).size() > 0;
     }
+    protected int howManyElementPresents(WebElement element, By locator) {
+        return element.findElements(locator).size();
+    }
 }

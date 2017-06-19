@@ -1,6 +1,7 @@
 package tests;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
@@ -23,7 +24,7 @@ public class StickerTest extends TestBase {
         List<WebElement> productList = app.shop().productList();
         int productSize = productList.size();
         for (int i = 0; i < productSize; i++) {
-            app.shop().areStickerPresent(productList.get(i));
+            Assert.assertEquals(1,app.shop().howManyStickerPresent(productList.get(i)));
             //System.out.println(app.shop().areStickerPresent(productList.get(i)));
         }
 
