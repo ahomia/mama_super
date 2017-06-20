@@ -69,6 +69,17 @@ public class ContriesTest extends TestBase{
         app.adminka().goTotheGeoZonesPage();
         List<WebElement> geoZonesList=app.adminka().contriesList();
         int countOfGeoZones=geoZonesList.size();
+        for (int i=0;i<countOfGeoZones;i++){
+            app.adminka().click(geoZonesList.get(i));
+            List<WebElement> geoTimeZoneList=app.adminka().geoTimeZonesList();
+            List<String> geoTimeZoneValueList=app.adminka().contriesValuesList(geoTimeZoneList);
+            List<String> geoTimeZoneValueListByOrder=app.adminka().sortedList(geoTimeZoneValueList);
+            Assert.assertArrayEquals(new List[]{geoTimeZoneValueListByOrder}, new List[]{geoTimeZoneValueList});
+            app.adminka().goTotheContriesPage();
+            app.adminka().wait5();
+            geoZonesList=app.adminka().contriesList();
+
+        }
 
 
     }

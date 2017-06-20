@@ -46,6 +46,11 @@ public class AdminkaHelper extends HelperBase {
 
     }
 
+    public List<WebElement> geoTimeZonesList(){
+        return listOfElements(By.xpath("//select[contains(@name,'zone_code')]/option[@selected='selected']"));
+
+    }
+
     public List<String> contriesValuesList(List<WebElement> elements){
         List<String> contriesValuesList=new ArrayList<String>();
 
