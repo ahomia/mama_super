@@ -41,7 +41,9 @@ public class HelperBase {
     public List<WebElement> listOfElements(By locator) {
         return wd.findElements(locator);
     }
-
+    public WebElement element(By locator) {
+        return wd.findElement(locator);
+    }
     public List<WebElement> listOfElements(By locator, WebElement element) {
         return element.findElements(locator);
     }

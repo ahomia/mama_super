@@ -22,4 +22,31 @@ public class ShopHelper extends HelperBase {
         return howManyElementPresents(element,
                 By.xpath(".//div[contains(@class,'sticker')]"));
     }
+    public WebElement product(){
+        return element(By.xpath("//div[@id='box-campaigns']//li[@class='product column shadow hover-light']"));
+    }
+    public String duckRegularPrice(WebElement element){
+        return element.findElement(By.xpath(".//s[@class='regular-price']")).getAttribute("innerHTML");
+    }
+    public String duckCampaignPrice(WebElement element){
+        return element.findElement(By.xpath(".//strong[@class='campaign-price']")).getAttribute("innerHTML");
+    }
+    public String duckRegularPrice(){
+        return wd.findElement(By.xpath(".//s[@class='regular-price']")).getAttribute("innerHTML");
+    }
+    public String duckCampaignPrice(){
+        return wd.findElement(By.xpath(".//strong[@class='campaign-price']")).getAttribute("innerHTML");
+    }
+    public String duckRegularColor(WebElement element){
+        return element.findElement(By.xpath(".//s[@class='regular-price']")).getCssValue("color");
+    }
+    public String duckCampaignColor(WebElement element){
+        return element.findElement(By.xpath(".//strong[@class='campaign-price']")).getCssValue("color");
+    }
+    public String duckRegularColor(){
+        return wd.findElement(By.xpath(".//s[@class='regular-price']")).getCssValue("color");
+    }
+    public String duckCampaignColor() {
+        return wd.findElement(By.xpath(".//strong[@class='campaign-price']")).getCssValue("color");
+    }
 }
