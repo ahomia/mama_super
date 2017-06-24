@@ -49,7 +49,7 @@ public class ApplicationManager {
         }
 
         wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        wd.get("http://localhost/litecart/");
+        wd.get("http://localhost/litecart/en/");
         loginHelper = new LoginHelper(wd);
         adminkaHelper = new AdminkaHelper(wd);
         shopHelper = new ShopHelper(wd);

@@ -3,11 +3,13 @@ package appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -32,11 +34,6 @@ public class HelperBase {
         element.click();
     }
 
-    public void type(By locator, String text) {
-        click(locator);
-        wd.findElement(locator).clear();
-        wd.findElement(locator).sendKeys(text);
-    }
 
     public List<WebElement> listOfElements(By locator) {
         return wd.findElements(locator);
@@ -75,5 +72,29 @@ public class HelperBase {
         }
         Arrays.sort(new List[]{listByOrder});
         return listByOrder;
+    }
+    public void type(By locator, String text) {
+        click(locator);
+        if (text != null) {
+            WebElement element = wd.findElement(locator);
+            String existingText = element.getAttribute("value");
+            if (!text.equals(existingText)) {
+                element.clear();
+                element.sendKeys(text);
+            }
+        }
+    }
+    public void selectDropdown(By locator, String text) {
+        if (isElementPresent(locator)) {
+            new Select(wd.findElement(locator)).selectByVisibleText(text);
+        }
+    }
+    protected boolean isElementPresent(By locator) {
+        try {
+            wd.findElement(locator);
+            return true;
+        } catch (NoSuchElementException ex) {
+            return false;
+        }
     }
 }

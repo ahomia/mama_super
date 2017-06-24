@@ -1,5 +1,6 @@
 package appmanager;
 
+import model.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -104,5 +105,35 @@ public class ShopHelper extends HelperBase {
         }
         return rgbList;
 
+    }
+    public void goTotheNewAccountForm(){
+        click(By.cssSelector("a[href='http://localhost/litecart/en/create_account']"));
+    }
+
+    public void fillNewAccount(Account account) {
+        type(By.name("tax_id"),account.getTaxId()) ;
+        type(By.name("firstname"),account.getFirstname() );
+        type(By.name("lastname"),account.getLastname() );
+        type(By.name("address1"),account.getAddress1());
+        type(By.name("postcode"),account.getPostcode() );
+        type(By.name("city"),account.getCity());
+        selectDropdown(By.xpath(".//select[@name='country_code']"),"United States");
+        wait5();
+        selectDropdown(By.xpath(".//select[@name='zone_code']"),"Alaska");
+        wait5();
+        type(By.name("email"),account.getEmail() );
+        type(By.name("phone"),account.getPhone() );
+        type(By.name("password"),account.getPassword());
+        type(By.name("confirmed_password"),account.getPassword());
+
+        click(By.cssSelector("button[name='create_account']"));
+    }
+    public void logout() {
+        click(By.cssSelector("aside#navigation a[href='http://localhost/litecart/en/logout']"));
+    }
+    public void login(String email, String password) {
+        type(By.name("email"),email);
+        type(By.name("password"),password);
+        click(By.cssSelector("span.button-set button[name=login]"));
     }
 }
