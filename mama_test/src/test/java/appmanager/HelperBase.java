@@ -101,4 +101,5 @@ public class HelperBase {
     public void customClick(By locator){
         new Actions(wd).moveToElement(wd.findElement(locator)).doubleClick().perform();
     }
+
 }
