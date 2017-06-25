@@ -4,13 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -101,5 +99,21 @@ public class HelperBase {
     public void customClick(By locator){
         new Actions(wd).moveToElement(wd.findElement(locator)).doubleClick().perform();
     }
-
+    public ExpectedCondition<String> anyWindowOtherThan(Set<String> existingWindows) {
+        return driver -> {
+            Set<String> handles = driver.getWindowHandles();
+            handles.removeAll(existingWindows);
+            return handles.size() > 0 ? handles.iterator().next() : null;
+        };
+    }
+    public void openExternalLinkAndClose(WebElement element) {
+        String originalWindow = wd.getWindowHandle();
+        Set<String> existingWindows = wd.getWindowHandles();
+        click(element);
+        WebDriverWait wait = new WebDriverWait(wd, 15);
+        String newWindow = wait.until(anyWindowOtherThan(existingWindows));
+        wd.switchTo().window(newWindow);
+        wd.close();
+        wd.switchTo().window(originalWindow);
+    }
 }

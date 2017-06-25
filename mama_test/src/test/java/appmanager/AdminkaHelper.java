@@ -131,4 +131,12 @@ public class AdminkaHelper extends HelperBase {
     public int coutOfProduct(){
         return wd.findElements(By.cssSelector(".row")).size();
     }
+    public void openAnyContry(){
+        click(By.xpath("//td/a"));
+    }
+
+    public List<WebElement> externalLink(){
+        return listOfElements(By.xpath("//i[@class='fa fa-external-link']"));
+
+    }
 }
