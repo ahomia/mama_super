@@ -118,9 +118,7 @@ public class ShopHelper extends HelperBase {
         type(By.name("postcode"),account.getPostcode() );
         type(By.name("city"),account.getCity());
         selectDropdown(By.xpath(".//select[@name='country_code']"),"United States");
-        wait5();
         selectDropdown(By.xpath(".//select[@name='zone_code']"),"Alaska");
-        wait5();
         type(By.name("email"),account.getEmail() );
         type(By.name("phone"),account.getPhone() );
         type(By.name("password"),account.getPassword());
