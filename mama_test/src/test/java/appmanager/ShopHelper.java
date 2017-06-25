@@ -141,26 +141,16 @@ public class ShopHelper extends HelperBase {
     public void openDuck() {
         click(By.xpath("//li[@class='product column shadow hover-light']"));
     }
-    public void addToCart() {
-        click(By.name("add_cart_product"));
-    }
+
     public void goToTheHomePage(){
         click(By.cssSelector("i.fa.fa-home"));
     }
-    public void waitForAdditingProduct(Integer count){
-        wait.until(textToBePresentInElementLocated((By.cssSelector("div#cart span.quantity")), String.valueOf(count)));
-    }
+
     public void goToTheBacket(){
         click(By.cssSelector("div#cart a.link"));
     }
 
-    public void deleteProductFromTheCart(){
-        click(By.cssSelector("ul.items button[name=remove_cart_item]"));
-    }
-    public void waitForDelletingProduct(Integer count){
-        wait.until(numberOfElementsToBe(By.cssSelector("tr td[style='text-align: center;']"), count));
-    }
-    public void waitForDelletingProduct(){
-        wait.until(stalenessOf(wd.findElement(By.id("box-checkout-summary"))));
-    }
+
+
+
 }

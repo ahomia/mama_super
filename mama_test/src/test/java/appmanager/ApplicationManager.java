@@ -17,6 +17,8 @@ public class ApplicationManager {
     private LoginHelper loginHelper;
     private AdminkaHelper adminkaHelper;
     private ShopHelper shopHelper;
+    private CartHelper cartHelper;
+    private ProductHelper productHelper;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -53,6 +55,8 @@ public class ApplicationManager {
         loginHelper = new LoginHelper(wd);
         adminkaHelper = new AdminkaHelper(wd);
         shopHelper = new ShopHelper(wd);
+        productHelper=new ProductHelper(wd);
+        cartHelper=new CartHelper(wd);
     }
 
     public void stop() {
@@ -69,5 +73,11 @@ public class ApplicationManager {
 
     public ShopHelper shop() {
         return shopHelper;
+    }
+    public CartHelper cart() {
+        return cartHelper;
+    }
+    public ProductHelper product() {
+        return productHelper;
     }
 }

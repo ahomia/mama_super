@@ -16,24 +16,18 @@ public class AddAndRemoveProductsFromCart extends TestBase {
 
     @Test
     public void AddAndRemoveProductsFromCart(){
-        app.shop().openDuck();
-        app.shop().addToCart();
-        app.shop().waitForAdditingProduct(1);
-        app.shop().goToTheHomePage();
-        app.shop().openDuck();
-        app.shop().addToCart();
-        app.shop().waitForAdditingProduct(2);
-        app.shop().goToTheHomePage();
-        app.shop().openDuck();
-        app.shop().addToCart();
-        app.shop().waitForAdditingProduct(3);
+        for (int i=1;i<=3;i++){
+            app.shop().openDuck();
+            app.product().addToCart();
+            app.cart().waitForAdditingProduct(i);
+            app.shop().goToTheHomePage();
+        }
+
         app.shop().goToTheBacket();
-        app.shop().deleteProductFromTheCart();
-        app.shop().waitForDelletingProduct(2);
-        app.shop().deleteProductFromTheCart();
-        app.shop().waitForDelletingProduct(1);
-        app.shop().deleteProductFromTheCart();
-        app.shop().waitForDelletingProduct();
+        for (int i=2;i>=0;i--) {
+            app.cart().deleteProductFromTheCart();
+            app.cart().waitForDelletingProduct(i);
+        }
 
 
     }
@@ -42,6 +36,6 @@ public class AddAndRemoveProductsFromCart extends TestBase {
     @After
     public void stop() {
 
-        app.stop();
+        //app.stop();
     }
 }
