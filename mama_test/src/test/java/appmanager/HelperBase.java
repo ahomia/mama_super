@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -115,5 +116,8 @@ public class HelperBase {
         wd.switchTo().window(newWindow);
         wd.close();
         wd.switchTo().window(originalWindow);
+    }
+    public List<LogEntry> logsList(){
+        return wd.manage().logs().get("browser").getAll();
     }
 }

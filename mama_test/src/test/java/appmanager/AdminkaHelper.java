@@ -139,4 +139,13 @@ public class AdminkaHelper extends HelperBase {
         return listOfElements(By.xpath("//i[@class='fa fa-external-link']"));
 
     }
+
+    public void openCategoryWithProducts(){
+        click(By.xpath("//a[@href='http://localhost/litecart/admin/?app=catalog&doc=catalog&category_id=1']"));
+    }
+
+    public List<WebElement> listOfProduct(){
+        return listOfElements(By.
+                xpath("//a[contains(@href,'http://localhost/litecart/admin/?app=catalog&doc=edit_product&category_id=1&product_id=') and @title='Edit']"));
+    }
 }
