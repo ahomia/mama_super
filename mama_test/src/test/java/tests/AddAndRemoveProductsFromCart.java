@@ -35,7 +35,6 @@ public class AddAndRemoveProductsFromCart extends TestBase {
 
     @After
     public void stop() {
-
-        //app.stop();
+        app.stop();
     }
 }

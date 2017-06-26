@@ -33,7 +33,7 @@ public class ApplicationManager {
             wd = new InternetExplorerDriver();
         }
 
-        wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wd.get("http://localhost/litecart/admin/.");
         loginHelper = new LoginHelper(wd);
         adminkaHelper = new AdminkaHelper(wd);
@@ -50,7 +50,7 @@ public class ApplicationManager {
             wd = new InternetExplorerDriver();
         }
 
-        wd.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wd.get("http://localhost/litecart/en/");
         loginHelper = new LoginHelper(wd);
         adminkaHelper = new AdminkaHelper(wd);
