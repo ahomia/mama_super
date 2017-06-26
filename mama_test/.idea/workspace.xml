@@ -43,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/appmanager/ProductHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#261#262#0" expanded="true" />
@@ -1296,8 +1296,8 @@
         <state relative-caret-position="1484">
           <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding>
-            <element signature="e#5178#5179#0" expanded="true" />
-            <element signature="e#5219#5220#0" expanded="true" />
+            <element signature="e#5178#5179#0" expanded="false" />
+            <element signature="e#5219#5220#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1377,7 +1377,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/appmanager/ProductHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#261#262#0" expanded="true" />

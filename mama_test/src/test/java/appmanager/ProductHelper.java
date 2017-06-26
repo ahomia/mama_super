@@ -18,5 +18,5 @@ public class ProductHelper extends HelperBase {
         }
             click(By.name("add_cart_product"));
 
-    }
+    }                 
 }
